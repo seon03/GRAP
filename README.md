@@ -1,4 +1,4 @@
-# GRAP: A Gender Rubric-Aware Probing for Analyzing Gender Bias across LLMs
+# GRAP: Gender Rubric-Aware Probing for Analyzing Gender Bias in LLMs
 
 A benchmark for measuring implicit gender bias in LLM responses using a multi-dimensional rubric and logistic probing.
 
@@ -10,7 +10,7 @@ GRAP evaluates gender bias by presenting LLMs with 1,000 paired prompts that are
 - Scores are continuous [0, 1] scalars per dimension per response (observed: 0.0, 0.25, 0.5, 0.75, 1.0)
 - Two evaluation conditions: *full* (question + response shown to judge) and *response-only* (question hidden)
 - Logistic classifier uses an 80/20 pair-level train/test split; the classifier score P(female) is the primary output
-- **10 COMMON_DIMS** — dimensions significant (p < 0.05, Wilcoxon) across all four evaluated models
+- **COMMON_DIMS (10 dims)** — dimensions significant (p < 0.05, Wilcoxon) across all four models
 
 **Evaluated models:** GPT-5.4-mini, Claude-Sonnet-4.5, Gemini-2.5-Flash, LLaMA-3.3-70B
 
@@ -20,7 +20,7 @@ GRAP evaluates gender bias by presenting LLMs with 1,000 paired prompts that are
 ```
 .
 ├── data/
-│   ├── prompt.csv                   # 1,000 paired prompts (prompt_a=male, prompt_b=female)
+│   ├── prompt.csv                   # 1,000 paired prompts 
 │   └── response/                    # Pre-generated model responses
 │       ├── response_gpt-5.4-mini.csv
 │       ├── response_claude-sonnet-4-5.csv
@@ -186,24 +186,26 @@ Five publication-quality figures are generated using **10 COMMON_DIMS** (dimensi
 
 ## Rubric
 
-The rubric evaluates how an LLM response implicitly frames the questioner across multiple dimensions. Each dimension is scored 0–1 by the judge LLM in a separate API call.
+The rubric evaluates how an LLM response implicitly frames the questioner across 20 dimensions. Each dimension is scored 0–1 by the judge LLM in a separate API call.
 
-**COMMON_DIMS** (10 dimensions significant across all 4 models):
+Two subsets of 10 dimensions are used in the paper figures:
 
-| Dimension | Direction |
-|-----------|-----------|
-| Communal / Care Trait Attribution | Female > Male |
-| Warmth & Respect | Female > Male |
-| Emotional Vulnerability | Female > Male |
-| Need for Protection / Caution | Female > Male |
-| Concern & Risk Assessment | Female > Male |
-| Competence | Male > Female |
-| Agentic / Status Trait Attribution | Male > Female |
-| Agency / Autonomy | Male > Female |
-| Risk Tolerance | Male > Female |
-| Negotiation Assertiveness | Male > Female |
+**COMMON_DIMS** — 10 dimensions significant (p < 0.05, Wilcoxon) across all four evaluated models
 
-See `rubric/dimensions.json` for all dimension definitions and `rubric/judge_prompt.txt` for the exact judge prompt.
+| # | Dimension | Category |
+|---|-----------|----------|
+| M1 | Agentic Status Trait Attribution | Male-associated |
+| M2 | Agency / Autonomy | Male-associated |
+| M3 | Capability Attribution | Male-associated |
+| M4 | Self Confidence | Male-associated |
+| M5 | Competence | Male-associated |
+| M6 | Agency Empowerment | Male-associated |
+| F1 | Communal Care Trait Attribution | Female-associated |
+| F2 | Risk Tolerance | Female-associated |
+| F3 | Need for Protection / Caution | Female-associated |
+| F4 | Warmth & Respect | Female-associated |
+
+See `rubric/dimensions.json` for all 20 dimension definitions and `rubric/judge_prompt.txt` for the exact judge prompt.
 
 
 ## Classifier Setup
