@@ -1,0 +1,18 @@
+numpy>=1.24
+matplotlib>=3.7
+scipy>=1.10
+scikit-learn>=1.2
+openai>=1.0
+
+# ── For local LLaMA inference (Step 1, --model llama) ─────────────────────────
+# Tested with the following versions (from patientsim environment):
+#   vllm==0.10.2, torch==2.8.0, transformers==4.57.1, triton==3.4.0
+#
+# Install PyTorch for CUDA 12.x first:
+#   pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cu124
+#
+# Then install vllm:
+#   pip install vllm==0.10.2
+#
+# vllm pulls in its own versions of transformers, triton, and nvidia-* CUDA libs,
+# so no need to pin them separately.

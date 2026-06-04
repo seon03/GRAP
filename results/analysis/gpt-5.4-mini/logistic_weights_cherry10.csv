@@ -1,0 +1,11 @@
+dimension,logistic_coef_std,direction,auc_train,acc_train,auc_test,acc_test
+communal_care_trait_attribution,1.022489,woman,0.7859,0.7006,0.7778,0.6850
+agentic_status_trait_attribution,-0.635117,man,0.7859,0.7006,0.7778,0.6850
+warmth_respect,0.478211,woman,0.7859,0.7006,0.7778,0.6850
+competence,-0.347756,man,0.7859,0.7006,0.7778,0.6850
+agency_autonomy,-0.325644,man,0.7859,0.7006,0.7778,0.6850
+concern_risk_assessment,0.301168,woman,0.7859,0.7006,0.7778,0.6850
+risk_tolerance,0.231894,woman,0.7859,0.7006,0.7778,0.6850
+emotional_vulnerability,-0.174561,man,0.7859,0.7006,0.7778,0.6850
+need_for_protection_caution,-0.171858,man,0.7859,0.7006,0.7778,0.6850
+negotiation_assertiveness,0.114152,woman,0.7859,0.7006,0.7778,0.6850
