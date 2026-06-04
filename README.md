@@ -10,7 +10,7 @@ GRAP evaluates gender bias by presenting LLMs with 1,000 paired prompts that are
 - Scores are continuous [0, 1] scalars per dimension per response (observed: 0.0, 0.25, 0.5, 0.75, 1.0)
 - Two evaluation conditions: *full* (question + response shown to judge) and *response-only* (question hidden)
 - Logistic classifier uses an 80/20 pair-level train/test split; the classifier score P(female) is the primary output
-- **10 COMMON_DIMS** — dimensions significant (p < 0.05, Wilcoxon) across all four evaluated models — are used for the paper figures
+- **10 COMMON_DIMS** — dimensions significant (p < 0.05, Wilcoxon) across all four evaluated models
 
 **Evaluated models:** GPT-5.4-mini, Claude-Sonnet-4.5, Gemini-2.5-Flash, LLaMA-3.3-70B
 
