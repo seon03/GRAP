@@ -28,7 +28,6 @@ GRAP evaluates gender bias by presenting LLMs with 1,000 paired prompts that are
 │       └── response_llama-3.3-70b-instruct.csv
 │
 ├── rubric/
-│   ├── bias_rubric.json             # Full rubric: system prompt + user template + dimensions
 │   ├── dimensions.json              # Dimension definitions only (reference)
 │   └── judge_prompt.txt             # Human-readable judge prompt documentation
 │

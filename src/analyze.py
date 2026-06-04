@@ -518,8 +518,6 @@ def _make_roc_overlay(roc_entries: list[dict], out_path: str) -> None:
     ax.set_xlim([0, 1]); ax.set_ylim([0, 1.02])
     ax.set_xlabel("False Positive Rate", fontsize=11)
     ax.set_ylabel("True Positive Rate",  fontsize=11)
-    ax.set_title("ROC Curves (Response-Only) — LLM Gender Bias\n"
-                 "(── original  ╌ top-200 removed)", fontsize=10)
     ax.legend(fontsize=8, loc="lower right", framealpha=0.9)
     plt.tight_layout()
     fig.savefig(out_path, dpi=150)
@@ -919,8 +917,6 @@ def _make_roc_paper(out_dir: str, score_dir_ro: str) -> None:
     ax.set_xlabel("False Positive Rate", fontsize=72)
     ax.set_ylabel("True Positive Rate",  fontsize=72)
     ax.tick_params(axis='both', labelsize=60)
-    ax.set_title("ROC Curves — Response-Only Evaluation\n"
-                 "(20 dims, no outlier removal, 80/20 test split)", fontsize=52)
     ax.legend(fontsize=44, loc="lower right", framealpha=0.95,
               handlelength=2.0, labelspacing=1.0, borderpad=0.8)
     for spine in ax.spines.values():
