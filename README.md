@@ -1,3 +1,5 @@
+Accepted at the 6th Workshop on Bias and Fairness in AI (BIAS 2026) @ ECML-PKDD
+
 # GRAP: Gender Rubric-Aware Probing for Analyzing Gender Bias in LLMs
 
 A benchmark for measuring implicit gender bias in LLM responses using a multi-dimensional rubric and logistic probing.
